@@ -9,7 +9,7 @@ import io.monteirodev.marvel.commons.loadImg
 import io.monteirodev.marvel.models.Comic
 import kotlinx.android.synthetic.main.comic_item.view.*
 
-class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>(){
+class ComicAdapter(val clickListener: (Comic) -> Unit) : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>(){
 
     private var comicList = ArrayList<Comic>()
 
@@ -20,7 +20,7 @@ class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>(){
     override fun getItemCount(): Int = comicList.size
 
     override fun onBindViewHolder(holder: ComicViewHolder, position: Int) {
-        return holder.bind(comicList[position])
+        return holder.bind(comicList[position], clickListener)
     }
 
     fun addComics(newComics: ArrayList<Comic>) {
@@ -31,9 +31,10 @@ class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>(){
     fun getComics() = comicList
 
     class ComicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(comic: Comic) = with(itemView) {
+        fun bind(comic: Comic, clickListener: (Comic) -> Unit) = with(itemView) {
             comic_image_view.loadImg(comic.thumbnail)
             comic_title_text_view.text = comic.title
+            setOnClickListener { clickListener(comic) }
         }
     }
 }

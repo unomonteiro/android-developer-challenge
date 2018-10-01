@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
+import android.widget.Toast
 import io.monteirodev.marvel.R
 import io.monteirodev.marvel.features.ComicsManager
 import io.monteirodev.marvel.models.Comic
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private val COMIC_LIST_KEY = "comic_list_key"
     private val comicsManager by lazy { ComicsManager() }
-    private val comicAdapter by lazy { ComicAdapter() }
+    private val comicAdapter = ComicAdapter(this::comicClicked)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,5 +88,9 @@ class MainActivity : AppCompatActivity() {
                         }
                 )
         subscriptions.add(subscription)
+    }
+
+    fun comicClicked(comic: Comic) {
+        Toast.makeText(this, comic.title, Toast.LENGTH_LONG).show()
     }
 }

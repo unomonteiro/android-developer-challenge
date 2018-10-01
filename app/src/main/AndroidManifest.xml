@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
         <!-- // todo AllowBackup and GoogleAppIndexingWarning -->
         <activity android:name=".ui.MainActivity">
             <intent-filter>
