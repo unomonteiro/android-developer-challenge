@@ -1,9 +1,10 @@
-package io.monteirodev.marvel
+package io.monteirodev.marvel.ui
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
+import io.monteirodev.marvel.R
 import io.monteirodev.marvel.features.ComicsManager
 import io.monteirodev.marvel.models.Comic
 import io.monteirodev.marvel.models.Image

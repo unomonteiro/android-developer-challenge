@@ -1,8 +1,9 @@
-package io.monteirodev.marvel
+package io.monteirodev.marvel.ui
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import io.monteirodev.marvel.R
 import io.monteirodev.marvel.commons.inflate
 import io.monteirodev.marvel.commons.loadImg
 import io.monteirodev.marvel.models.Comic
