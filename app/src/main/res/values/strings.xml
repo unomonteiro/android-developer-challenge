@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">marvel</string>
+    <string name="app_name">Marvel Comics</string>
+    <string name="comic_image_content">comic image</string>
 </resources>
