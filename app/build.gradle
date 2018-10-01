@@ -3,12 +3,19 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.jetbrains.kotlin.android.extensions'
+
 
 android {
+    // @Parcelize
+    androidExtensions {
+        experimental = true
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "io.monteirodev.marvel"
         minSdkVersion 21
+        //noinspection OldTargetApi // todo androidx components
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
