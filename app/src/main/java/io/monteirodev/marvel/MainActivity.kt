@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
             comics.add(Comic(
                     "title $i",
                     "description $i",
-                    Image("", "")
+                    if (i==3) Image("","")
+                    else Image("https://picsum.photos/200/300?image=$i", "")
             ))
         }
         comicAdapter.addComics(comics)
